@@ -1,6 +1,7 @@
 # ELK
-elk setup for zimbra
+elk setup for zimbra. ELK setup by following this guide: https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-ubuntu-14-04
 
+Logstash configuration files
 sources: https://github.com/ITLinuxCL/zimbra_logstash
 Sources: https://github.com/nxhack/logstash
 
