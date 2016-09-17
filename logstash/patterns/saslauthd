@@ -1,0 +1,9 @@
+#SASL
+SASLSTATUS (?:failed|OK)
+SASLEMAIL (?:\[%{EMAILADDRESS:email}\])
+
+#SASL_COM saslauthd(?:\[%{POSINT:pid}\])?: %{DATA:provider}: %{SASLRESULT}
+#SASLAUTHD %{SYSLOGTIMESTAMP:created_at} %{HOSTNAME:hostname} %{SASL_COM}
+#SASLRESULT %{HTTPDUSER:username} auth %{SASLSTATUS:result}(: authentication failed for %{SASLEMAIL})?
+
+%{SYSLOGTIMESTAMP:created_at} %{HOSTNAME:hostname} saslauthd(?:\[%{POSINT:pid}\])?: %{PROG:provider}: %{HTTPDUSER:username} auth %{CISCO_REASON:result}(: authentication failed for \[%{EMAILLOCALPART:email}\])?
